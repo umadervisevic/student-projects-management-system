@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIzvjestaji" targetNamespace="http://tempuri.org/dsIzvjestaji.xsd" xmlns:mstns="http://tempuri.org/dsIzvjestaji.xsd" xmlns="http://tempuri.org/dsIzvjestaji.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIzvjestaji" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIzvjestaji" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsIzvjestaji">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Projekti" msprop:Generator_RowEvHandlerName="ProjektiRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjektiRowDeleted" msprop:Generator_RowDeletingName="ProjektiRowDeleting" msprop:Generator_RowEvArgName="ProjektiRowChangeEvent" msprop:Generator_TablePropName="Projekti" msprop:Generator_RowChangedName="ProjektiRowChanged" msprop:Generator_RowChangingName="ProjektiRowChanging" msprop:Generator_TableClassName="ProjektiDataTable" msprop:Generator_RowClassName="ProjektiRow" msprop:Generator_TableVarName="tableProjekti" msprop:Generator_UserTableName="Projekti">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rb" msprop:Generator_ColumnPropNameInRow="Rb" msprop:Generator_ColumnPropNameInTable="RbColumn" msprop:Generator_ColumnVarNameInTable="columnRb" msprop:Generator_UserColumnName="Rb" type="xs:string" minOccurs="0" />
+              <xs:element name="Student" msprop:Generator_ColumnPropNameInRow="Student" msprop:Generator_ColumnPropNameInTable="StudentColumn" msprop:Generator_ColumnVarNameInTable="columnStudent" msprop:Generator_UserColumnName="Student" type="xs:string" minOccurs="0" />
+              <xs:element name="Projekat" msprop:Generator_ColumnPropNameInRow="Projekat" msprop:Generator_ColumnPropNameInTable="ProjekatColumn" msprop:Generator_ColumnVarNameInTable="columnProjekat" msprop:Generator_UserColumnName="Projekat" type="xs:string" minOccurs="0" />
+              <xs:element name="Stanje" msprop:Generator_ColumnPropNameInRow="Stanje" msprop:Generator_ColumnPropNameInTable="StanjeColumn" msprop:Generator_ColumnVarNameInTable="columnStanje" msprop:Generator_UserColumnName="Stanje" type="xs:string" minOccurs="0" />
+              <xs:element name="RokZavrsetka" msprop:Generator_ColumnPropNameInRow="RokZavrsetka" msprop:Generator_ColumnPropNameInTable="RokZavrsetkaColumn" msprop:Generator_ColumnVarNameInTable="columnRokZavrsetka" msprop:Generator_UserColumnName="RokZavrsetka" type="xs:string" minOccurs="0" />
+              <xs:element name="BrojDana" msprop:Generator_ColumnPropNameInRow="BrojDana" msprop:Generator_ColumnPropNameInTable="BrojDanaColumn" msprop:Generator_ColumnVarNameInTable="columnBrojDana" msprop:Generator_UserColumnName="BrojDana" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
