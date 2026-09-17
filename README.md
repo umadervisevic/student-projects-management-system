@@ -160,7 +160,7 @@ Pored implementacije aplikacije, urađena je i analiza sistema kroz UML dijagram
 Za izradu analize i dijagrama korišteni su materijali sa predmeta **Analiza i dizajn softvera**.
 
 - Profesorica: **dr. sc. Emina Junuz**
-- Materijali: **dostupni materijali sa fakulteta!!!!**
+- Materijali: **nastavni materijali sa predmeta Analiza i dizajn softvera**
 
 U okviru analize sistema obrađeni su:
 
