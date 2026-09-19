@@ -1,45 +1,46 @@
 # Student Projects Management System
 
-Desktop aplikacija za upravljanje projektima i prijavama studenata na projekte, razvijena u C# WinForms tehnologiji.
+Desktop application for managing projects and student applications to projects, developed using C# WinForms technology.
 
 
-## Napomena
+## Note
 
-Ovaj projekat predstavlja rješenje **ispitnog primjera** iz predmeta **Programiranje III**.
+This project represents a solution to an **exam example** from the **Programming III** course.
 
-Osnovni zahtjevi i funkcionalnosti projekta definisani su kroz ispitni primjer koji je objavio
+The basic requirements and functionalities of the project were defined through an exam example published by
 
-- Profesor: **dr. sc. Denis Mušić**
+- Professor: **dr. sc. Denis Mušić**
 - GitHub: **https://github.com/denis-music/cs-winforms-exam-template-2025-26**
 
 
-## O projektu
+## About the Project
 
-Aplikacija omogućava evidenciju studenata, projekata i prijava studenata na projekte.
+The application enables the management of students, projects, and student applications to projects.
 
-Korisnik kroz aplikaciju može pregledati postojeće prijave, pretraživati i filtrirati podatke, dodavati nove projekte i prijave, uređivati postojeće prijave.
+Through the application, the user can view existing applications, search and filter data, add new projects and applications, and edit existing applications.
 
-Aplikacija takođe sadrži različite validacije kojima se osigurava ispravan unos podataka.
-
-## Glavne funkcionalnosti
-
-- pregled prijava studenata na projekte
-- pretraga prijava prema imenu i prezimenu studenta
-- pretraga prema nazivu projekta
-- filtriranje prijava prema statusu prijave
-- filtriranje prema stanju prijave
-- dodavanje novih projekata
-- dodavanje novih prijava studenata na projekte
-- izmjena postojećih prijava
-- generisanje prijava za dostupne projekte
-- kreiranje izvještaja
-- validacija podataka prilikom unosa i izmjene
-- prikaz i upravljanje podacima iz SQLite baze
+The application also contains various validations that ensure correct data entry.
 
 
-## Tehnologije
+## Main Features
 
-Projekat je razvijen korištenjem sljedećih tehnologija i alata:
+- viewing student applications to projects
+- searching applications by student first and last name
+- searching by project name
+- filtering applications by application status
+- filtering by application state
+- adding new projects
+- adding new student applications to projects
+- editing existing applications
+- generating applications for available projects
+- creating reports
+- data validation during entry and editing
+- viewing and managing data from the SQLite database
+
+
+## Technologies
+
+The project was developed using the following technologies and tools:
 
 - **C#**
 - **.NET**
@@ -50,136 +51,155 @@ Projekat je razvijen korištenjem sljedećih tehnologija i alata:
 - **Git**
 - **GitHub**
 
-## Arhitektura projekta
+## Project Architecture
 
-Projekat je organizovan kroz više slojeva kako bi se odvojili rad sa podacima, poslovna logika i korisnički interfejs.
+The project is organized into multiple layers in order to separate data access, business logic, and the user interface.
 
 ### Studentska.Data
 
-Sloj zadužen za rad sa bazom podataka i definisanje modela odnosno entiteta koji se koriste u aplikaciji.
+A layer responsible for working with the database and defining the models, i.e. entities, used in the application.
 
 ### Studentska.Servis
 
-Sadrži servisne klase koje implementiraju poslovnu logiku aplikacije i omogućavaju komunikaciju između korisničkog interfejsa i sloja za pristup podacima.
+Contains service classes that implement the application's business logic and enable communication between the user interface and the data access layer.
 
 ### Studentska.WinApp
 
-Windows Forms aplikacija koja predstavlja korisnički interfejs i omogućava korisniku rad sa studentima, projektima i prijavama.
+A Windows Forms application that represents the user interface and enables the user to work with students, projects, and applications.
 
+<img src="ProjectDiagram.drawio.png" alt="ePrijave Application" width="400">
 
-## Baza podataka
+## Database
 
-Za čuvanje podataka koristi se **SQLite** baza podataka.
+The **SQLite** database is used for data storage.
 
-Glavni entiteti koji se koriste u aplikaciji su:
+The main entities used in the application are:
 
 - `Studenti`
 - `Projekti`
-- `StudentiProjekti` (predstavlja **prijave**, vezu između entiteta `Studenti` i `Projekti`)
+- `StudentiProjekti` (represents **applications**, the relationship between the `Studenti` and `Projekti` entities)
 
 
-Baza podataka se nalazi u okviru aplikacije i koristi se za trajno čuvanje podataka potrebnih za rad sistema.
+The database is located within the application and is used for permanent storage of the data required for the system to operate.
 
 
-## Rad sa projektima
+## Working with Projects
 
-Aplikacija omogućava dodavanje novih projekata kroz posebnu formu.
+The application enables adding new projects through a dedicated form.
 
-Prilikom dodavanja projekta unose se podaci kao što su:
+When adding a project, the following data is entered:
 
-- naziv projekta
-- napomena
-- rok završetka
-- maksimalan broj studenata
-- status aktivnosti projekta
-- logo projekta
+- project name
+- note
+- completion deadline
+- maximum number of students
+- project activity status
+- project logo
 
-Projekat može biti aktivan ili neaktivan, što utiče na njegovu dostupnost prilikom kreiranja novih prijava.
+A project can be active or inactive, which affects its availability when creating new applications.
 
 
-## Rad sa prijavama
+## Working with Applications
 
-Korisnik može dodati novu prijavu studenta na odabrani projekat.
+The user can add a new student application to a selected project.
 
-Prilikom kreiranja prijave odabiru se:
+When creating an application, the following are selected:
 
 - student
-- projekat
-- datum prijave
-- status prijave
+- project
+- application date
+- application status
 
 
-Prilikom izmjene postojeće prijave određena polja mogu biti ograničena u zavisnosti od trenutnog statusa prijave, čime se osigurava ispravan tok promjene statusa.
+When editing an existing application, certain fields may be restricted depending on the current application status, ensuring a valid status transition flow.
 
 
-## Pretraga i filtriranje
+## Search and Filtering
 
-Aplikacija sadrži formu za pregled i pretragu prijava.
+The application contains a form for viewing and searching applications.
 
-Podaci se mogu filtrirati prema:
+Data can be filtered by:
 
-- imenu i prezimenu studenta
-- nazivu projekta
-- statusu prijave
-- stanju prijave
+- student first and last name
+- project name
+- application status
+- application state
 
-Rezultati se prikazuju u tabelarnom obliku pomoću `DataGridView` kontrole.
-
-
-## Validacija podataka
-
-Prilikom rada sa aplikacijom provjeravaju se različiti uslovi kako bi se spriječio neispravan unos podataka.
-
-Validacije uključuju, između ostalog:
-
-- obavezna polja
-- ispravnost unesenih vrijednosti
-- dostupnost projekta
-- maksimalan broj studenata na projektu
-- postojanje postojećih prijava
-- dozvoljene promjene statusa
-- rok završetka projekta
-
-Na ovaj način aplikacija sprječava situacije koje nisu dozvoljene definisanim pravilima sistema.
+The results are displayed in a tabular format using the `DataGridView` control.
 
 
-## Generisanje prijava
+## Data Validation
 
-Aplikacija omogućava automatsko generisanje prijava za studenta.
+When working with the application, various conditions are checked to prevent invalid data entry.
 
-Prilikom generisanja provjeravaju se uslovi koji određuju da li određeni projekat može biti ponuđen studentu.
+Validations include, among other things:
 
-Generisane prijave se prikazuju korisniku kroz informativni dio forme, gdje se može pratiti koje su prijave uspješno dodane.
+- required fields
+- validity of entered values
+- project availability
+- maximum number of students on a project
+- existence of existing applications
+- allowed status changes
+- project completion deadline
+
+In this way, the application prevents situations that are not permitted by the defined system rules.
 
 
+## Application Generation
 
-## UML i analiza sistema
+The application enables automatic generation of applications for a student.
 
-Pored implementacije aplikacije, urađena je i analiza sistema kroz UML dijagrame.
+During generation, conditions are checked to determine whether a particular project can be offered to the student.
 
-Za izradu analize i dijagrama korišteni su materijali sa predmeta **Analiza i dizajn softvera**.
+Generated applications are displayed to the user through an informational section of the form, where it is possible to track which applications were successfully added.
 
-- Profesorica: **dr. sc. Emina Junuz**
-- Materijali: **nastavni materijali sa predmeta Analiza i dizajn softvera**
 
-U okviru analize sistema obrađeni su:
+## UML and System Analysis
 
-- domen sistema
-- ključni entiteti i njihovi odnosi
-- korisnik i sistem
-- tokovi komunikacije
-- procesi koji se izvršavaju u aplikaciji
+In addition to implementing the application, a system analysis was carried out using UML diagrams.
 
-### UML dijagrami
+The analysis and diagrams were created using materials from the **Software Analysis and Design** course.
+
+- Professor: **dr. sc. Emina Junuz**
+- Materials: **course materials from Software Analysis and Design**
+
+The system analysis covers:
+
+- system domain
+- key entities and their relationships
+- user and system
+- communication flows
+- processes executed within the application
+
+### UML Diagrams
 
 - Use Case
 - Domain Model
-- Sistem sekvencijalni dijagram
-- Dijagram klasa
-- Sekvencijalni dijagram
-- Dijagram stanja
-- Kolaboracijski dijagram
-- Dijagram aktivnosti
-- Dijagram komponenti
-- Dijagram rasporeda
+- System Sequence Diagram
+- Class Diagram
+- Sequence Diagram
+- State Diagram
+- Communication Diagram
+- Activity Diagram
+- Component Diagram
+- Deployment Diagram
 
+## Getting Started
+
+To run the project locally:
+
+1. Clone the repository.
+2. Open the `.sln` solution file in Visual Studio.
+3. Rebuild to restore the required NuGet packages.
+4. Build and run the application from the solution.
+
+## Project Analysis and Documentation
+
+A detailed analysis of the project is available in `ePrijave.pdf`.
+
+The document contains an overview of the application, screenshots and explanations of the implemented forms, as well as the UML diagrams created as part of the system analysis and design.
+
+## Project Purpose
+
+This project was developed as a practical way to bring together the knowledge and skills acquired throughout my studies, with a focus on software development, database management, and system analysis and design.
+#### Uma Dervišević
